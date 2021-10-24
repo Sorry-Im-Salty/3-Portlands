@@ -1,0 +1,8 @@
+
+"newrp"
+{
+	"base" 			"helix"
+	"title" 		"New RP"
+	"author" 		"Lukaku"
+	"menusystem"	"1"
+}
