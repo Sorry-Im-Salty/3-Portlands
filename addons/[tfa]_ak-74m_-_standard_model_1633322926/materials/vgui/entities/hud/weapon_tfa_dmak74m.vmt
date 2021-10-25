@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/entities/hud/weapon_tfa_dmak74m"
+	"$nolod" 1
+	"$vertexalpha" 1
+	"$vertexcolor" 1
+}
