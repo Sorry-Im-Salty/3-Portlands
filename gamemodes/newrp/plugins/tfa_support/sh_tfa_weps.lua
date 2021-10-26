@@ -123,3 +123,37 @@ PLUGIN.GunData[ "tfa_mwr_usp45" ] = {
 	--Sec == Secondary
 	Sec = {}
 }
+
+PLUGIN.GunData[ "tfa_mwr_m1911" ] = {
+	--Weapon can be Blacklisted and item will be not auto-generated
+	BlackList = false,
+	--Make sure exRender is always true for custom models, this keeps the inventory icons from fucking up
+	exRender = true,
+
+	Slot = "secondary",
+	Model = "models/weapons/tfa_cod/mwr/w_m1911.mdl",
+	iconCam = {
+		tpos = Vector( 0, 0, 0 ),
+		tang = Angle( 0, 0, 0),
+		tfov = 0
+	},
+	Width = 2,
+	Height = 2,
+	Weight = 3,
+	Price = 2000,
+	
+	--Weapon Parameters
+	--Prim == Primary
+	Prim = {
+		Ammo = "pistol",
+		Damage = 60,
+		KickUp = 0.4,
+		KickDown = 0.4,
+		KickHorizontal = 0.35,
+		Spread = .021,
+		IronAccuracy = .01
+	},
+	
+	--Sec == Secondary
+	Sec = {}
+}
