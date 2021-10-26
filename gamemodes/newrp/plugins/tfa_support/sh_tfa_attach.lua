@@ -31,3 +31,23 @@ PLUGIN.AttachData[ "ins2_si_kobra" ] = {
 	Height = 1,
 	Slot = 2
 }
+
+PLUGIN.AttachData[ "cod_ub_laser" ] = {
+	Name = "Laser",
+	Desc = "Underbarrel Laser",
+	Price = 2000,
+	Model = "entities/cod_att_ub_laser.png",
+	Width = 1,
+	Height = 1,
+	Slot = 3
+}
+
+PLUGIN.AttachData[ "cod_br_supp" ] = {
+	Name = "Suppressor",
+	Desc = "Standard Suppressor",
+	Price = 2000,
+	Model = "entities/cod_att_br_supp.png",
+	Width = 1,
+	Height = 1,
+	Slot = 1
+}
