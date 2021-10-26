@@ -12,7 +12,7 @@ RECIPE.results = {
 --RECIPE.tools = {
 --	"cid"
 --}
-RECIPE.flag = "V"
+RECIPE.flag = "G"
 
 RECIPE:PostHook("OnCanCraft", function(recipeTable, client)
 	for _, v in pairs(ents.FindByClass("ix_station_gunsmith")) do
