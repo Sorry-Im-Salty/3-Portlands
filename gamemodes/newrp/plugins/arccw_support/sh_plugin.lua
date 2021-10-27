@@ -2,11 +2,11 @@ local PLUGIN = PLUGIN
 
 PLUGIN.DoAutoCreation = false
 
-PLUGIN.name = "TFA Support"
-PLUGIN.author = "Taxin2012"
-PLUGIN.description = "Support for TFA Weapons Pack"
+PLUGIN.name = "ArcCW Support"
+PLUGIN.author = "Sorry im Salty"
+PLUGIN.description = "Support for ArcCW Weapons Pack"
 PLUGIN.license = [[
-Copyright 2019 Taxin2012
+Copyright 2021 Sorry im Salty
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -46,5 +46,5 @@ If `false`:
 
 
 
-ix.util.Include("sh_tfa_support.lua")
-ix.util.Include("cl_tfa_support.lua")
+ix.util.Include("sh_arccw_support.lua")
+ix.util.Include("cl_arccw_support.lua")
