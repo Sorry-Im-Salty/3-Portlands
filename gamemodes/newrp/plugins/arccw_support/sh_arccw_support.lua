@@ -1,6 +1,6 @@
 
 --
--- Copyright (C) 2020 Taxin2012
+-- Copyright (C) 2021 Sorry im Salty
 --
 -- Licensed under the Apache License, Version 2.0 (the "License");
 -- you may not use this file except in compliance with the License.
@@ -17,21 +17,21 @@
 
 
 
---	Writed by Taxin2012
---	https://steamcommunity.com/id/Taxin2012/
+--	Writen by Sorry im Salty
+--	https://steamcommunity.com/id/SorryimSalty/
 
 
 
 local PLUGIN = PLUGIN
 
 PLUGIN.GunData = {}
-ix.util.Include("sh_tfa_weps.lua")
+ix.util.Include("sh_arccw_weps.lua")
 
 PLUGIN.AttachData = {}
-ix.util.Include("sh_tfa_attach.lua")
+ix.util.Include("sh_arccw_attach.lua")
 
 PLUGIN.AmmoData = {}
-ix.util.Include("sh_tfa_ammo.lua")
+ix.util.Include("sh_arccw_ammo.lua")
 
 if CLIENT then
 	function PLUGIN:PopulateItemTooltip( tooltip, item )
@@ -76,7 +76,7 @@ function PLUGIN:InitializedPlugins()
 				continue
 			end
 		else
-			if self.DoAutoCreation and class:find( "tfa_" ) and not class:find( "base" ) then
+			if self.DoAutoCreation and class:find( "arccw_" ) and not class:find( "base" ) then
 				dat = {}
 			else
 				continue
@@ -111,7 +111,7 @@ function PLUGIN:InitializedPlugins()
 		ITEM.price = dat.Price or 4000
 		ITEM.exRender = dat.exRender or false
 		ITEM.class = class
-		ITEM.IsTFA = true
+		ITEM.IsArcCW = true
 		ITEM.DoEquipSnd = true
 		
 		if dat.iconCam then
@@ -273,7 +273,7 @@ function PLUGIN:InitializedPlugins()
 				local targets = {}
 
 				for k, v in next, client:GetCharacter():GetInventory():GetItems() do
-					if v.isWeapon and v.IsTFA and v.Attachments and v.Attachments[ item.uniqueID ] then
+					if v.isWeapon and v.IsArcCW and v.Attachments and v.Attachments[ item.uniqueID ] then
 						table.insert( targets, {
 							name = v.name,
 							data = { v.id },

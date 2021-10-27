@@ -1,6 +1,6 @@
 
 --
--- Copyright (C) 2020 Taxin2012
+-- Copyright (C) 2021 Sorry im Salty
 --
 -- Licensed under the Apache License, Version 2.0 (the "License");
 -- you may not use this file except in compliance with the License.
@@ -17,19 +17,19 @@
 
 
 
---	Writed by Taxin2012
---	https://steamcommunity.com/id/Taxin2012/
+--	Writen by Sorry im Salty
+--	https://steamcommunity.com/id/SorryimSalty/
 
 
 
-PLUGIN.GunData[ "tfa_dmak74m" ] = {
+PLUGIN.GunData[ "arccw_go_ak47" ] = {
 	--Weapon can be Blacklisted and item will be not auto-generated
 	BlackList = false,
 	--Make sure exRender is always true for custom models, this keeps the inventory icons from fucking up
 	exRender = true,
 
 	Slot = "primary",
-	Model = "models/weapons/w_tfa_dmak74m.mdl",
+	Model = "models/weapons/w_rif_ak47.mdl",
 	iconCam = {
 		tpos = Vector( 0, 0, 0 ),
 		tang = Angle( 0, 0, 0 ),

@@ -1,6 +1,6 @@
 
 --
--- Copyright (C) 2019 Taxin2012
+-- Copyright (C) 2021 Sorry im Salty
 --
 -- Licensed under the Apache License, Version 2.0 (the "License");
 -- you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@
 
 
 
---	Writed by Taxin2012
---	https://steamcommunity.com/id/Taxin2012/
+--	Writen by Sorry im Salty
+--	https://steamcommunity.com/id/SorryimSalty/
 
 
 
