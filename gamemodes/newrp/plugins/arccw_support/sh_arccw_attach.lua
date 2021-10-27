@@ -22,7 +22,7 @@
 
 
 
-PLUGIN.AttachData[ "acwatt_arccw_muzzle_bocw_usasuppressor1" ] = {
+/*PLUGIN.AttachData[ "acwatt_arccw_muzzle_bocw_usasuppressor1" ] = {
 	Name = "Nato Suppressor",
 	Desc = "test",
 	Price = 2000,
