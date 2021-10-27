@@ -22,32 +22,12 @@
 
 
 
-PLUGIN.AttachData[ "go_ak_barrel_short" ] = {
-	Name = "AK short barrel",
+PLUGIN.AttachData[ "acwatt_arccw_muzzle_bocw_usasuppressor1" ] = {
+	Name = "Nato Suppressor",
 	Desc = "test",
 	Price = 2000,
-	Model = "models/Items/BoxSRounds.mdl",
+	Model = "models/weapons/arccw/atts/bocw_att_muzzle_suppressorusa1.mdl",
 	Width = 1,
 	Height = 1,
 	Slot = 2
-}
-
-PLUGIN.AttachData[ "cod_ub_laser" ] = {
-	Name = "Laser",
-	Desc = "Underbarrel Laser",
-	Price = 2000,
-	Model = "entities/cod_att_ub_laser.png",
-	Width = 1,
-	Height = 1,
-	Slot = 3
-}
-
-PLUGIN.AttachData[ "cod_br_supp" ] = {
-	Name = "Suppressor",
-	Desc = "Standard Suppressor",
-	Price = 2000,
-	Model = "entities/cod_att_br_supp.png",
-	Width = 1,
-	Height = 1,
-	Slot = 1
 }

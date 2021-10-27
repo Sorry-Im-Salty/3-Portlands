@@ -38,7 +38,7 @@ if CLIENT then
 		if item.Attachments and not table.IsEmpty( item.Attachments ) then
 			local text = "Modifications: "
 
-			local mods = item:GetData( "mods", {} )
+			local mods = item:GetData( "Attachments", {} )
 			local already = {}
 
 			if not table.IsEmpty( mods ) then
