@@ -22,7 +22,7 @@
 
 
 
-local SWEP = weapons.GetStored("tfa_gun_base")
+local SWEP = weapons.GetStored("arccw_base")
 
 hook.Remove( "ContextMenuOpen", "TFAContextBlock" )
 
