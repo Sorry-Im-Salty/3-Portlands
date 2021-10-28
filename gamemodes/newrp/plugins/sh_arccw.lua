@@ -1,6 +1,9 @@
+local PLUGIN = PLUGIN
 PLUGIN.name = "arccw compatibility"
 PLUGIN.author = "Lechu2375"
-
+PLUGIN.DefaultAttachements = {
+    "muzz_brake","optic_reflex"
+}
 
 
 function PLUGIN:ArcCW_PlayerCanAttach(ply, wep, attname, slot, detach)
@@ -12,23 +15,22 @@ function PLUGIN:ArcCW_PlayerCanAttach(ply, wep, attname, slot, detach)
     if(detach) then
         return true
     end
-    local result = character:GetInventory():HasItem(attname) or DefaultAttachements[attname]
+    local result = (attname == "" or character:GetInventory():HasItem(attname) or PLUGIN.DefaultAttachements[attname] or false) 
     if(!result) then
         print("[ArcCW Support] Missing attachement item",attname)
     end
+    print("result",result)
     return result
 end
 
 
-local DefaultAttachements = {
-    "go_usp_slide_short","go_p250_slide_short"
-}
 
 
-local SwapTable = DefaultAttachements
-DefaultAttachements = {}
+
+local SwapTable = PLUGIN.DefaultAttachements
+PLUGIN.DefaultAttachements = {}
 for _,v in pairs(SwapTable) do
-    DefaultAttachements[v] = true
+    PLUGIN.DefaultAttachements[v] = true
 end
 
 if(CLIENT and ArcCW) then //Crosshair is broken for IX, we have already Health indicator in IX.
