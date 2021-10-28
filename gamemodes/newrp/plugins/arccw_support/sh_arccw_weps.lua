@@ -23,6 +23,7 @@
 
 -- ASSAULT RIFLES --
 
+-- AR-C -- 
 PLUGIN.GunData[ "arccw_fml_blast_fc5_arc" ] = {
 	--Weapon can be Blacklisted and item will be not auto-generated
 	BlackList = false,
@@ -58,22 +59,24 @@ PLUGIN.GunData[ "arccw_fml_blast_fc5_arc" ] = {
 }
 
 -- ========================================================================================================================================================================================
+-- SUB MACHINE --
 
-PLUGIN.GunData[ "arccw_bocw_hauer77" ] = {
+-- Karma 45 --
+PLUGIN.GunData[ "arccw_fml_karma9" ] = {
 	--Weapon can be Blacklisted and item will be not auto-generated
 	BlackList = false,
 	--Make sure exRender is always true for custom models, this keeps the inventory icons from fucking up
 	exRender = true,
 
-	Slot = "secondary",
-	Model = "models/weapons/arccw/w_bocw_hauer77.mdl",
+	Slot = "primary",
+	Model = "models/weapons/arccw/fml/w_karma9.mdl",
 	iconCam = {
 		tpos = Vector( 0, 0, 0 ),
 		tang = Angle( 0, 0, 0 ),
 		tfov = 0
 	},
-	Width = 4,
-	Height = 1,
+	Width = 2,
+	Height = 2,
 	Weight = 3,
 	Price = 2000,
 	
@@ -81,8 +84,8 @@ PLUGIN.GunData[ "arccw_bocw_hauer77" ] = {
 	--Prim == Primary
 	Prim = {
 		Ammo = "pistol",
-		Damage = 31,
-		KickUp = 0.7,
+		Damage = 15,
+		KickUp = 0.5,
 		KickDown = 0.4,
 		KickHorizontal = 0.35,
 		Spread = .021,
