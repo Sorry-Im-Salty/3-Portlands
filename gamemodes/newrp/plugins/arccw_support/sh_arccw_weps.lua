@@ -21,6 +21,7 @@
 --	https://steamcommunity.com/id/SorryimSalty/
 
 
+-- ASSAULT RIFLES --
 
 PLUGIN.GunData[ "arccw_fml_blast_fc5_arc" ] = {
 	--Weapon can be Blacklisted and item will be not auto-generated
@@ -35,7 +36,7 @@ PLUGIN.GunData[ "arccw_fml_blast_fc5_arc" ] = {
 		tang = Angle( 0, 0, 0 ),
 		tfov = 0
 	},
-	Width = 2,
+	Width = 3,
 	Height = 3,
 	Weight = 3,
 	Price = 2000,
@@ -48,13 +49,15 @@ PLUGIN.GunData[ "arccw_fml_blast_fc5_arc" ] = {
 		KickUp = 0.3,
 		KickDown = 0.4,
 		KickHorizontal = 0.35,
-		Spread = .021,
+		Spread = .017,
 		IronAccuracy = .01
 	},
 	
 	--Sec == Secondary
 	Sec = {}
 }
+
+-- ========================================================================================================================================================================================
 
 PLUGIN.GunData[ "arccw_bocw_hauer77" ] = {
 	--Weapon can be Blacklisted and item will be not auto-generated
