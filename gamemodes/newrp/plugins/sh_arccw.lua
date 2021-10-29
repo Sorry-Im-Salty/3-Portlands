@@ -2,9 +2,15 @@ local PLUGIN = PLUGIN
 PLUGIN.name = "arccw compatibility"
 PLUGIN.author = "Lechu2375"
 PLUGIN.DefaultAttachements = {
-    "muzz_brake","optic_reflex"
+    "go_usp_slide_short","go_p250_slide_short","go_stock_pistol_bt"
 }
 
+ix.config.Add("arcCWGenWepItems", true, "Whether or not to automatically generate ArcCW weapon items.", nil, {
+	category = "ArcCW Support"
+})
+ix.config.Add("arcCWDefScopes", true, "Whether or not to allow using default scope attachement.", nil, {
+	category = "ArcCW Support"
+})
 
 function PLUGIN:ArcCW_PlayerCanAttach(ply, wep, attname, slot, detach)
     local character = ply:GetCharacter()
@@ -16,10 +22,12 @@ function PLUGIN:ArcCW_PlayerCanAttach(ply, wep, attname, slot, detach)
         return true
     end
     local result = (attname == "" or character:GetInventory():HasItem(attname) or PLUGIN.DefaultAttachements[attname] or false) 
+    if(!result and ix.config.Get("arcCWDefScopes", true)) then
+        result = weapons.Get(wep:GetClass()).Attachments[1].Installed == attname
+    end
     if(!result) then
         print("[ArcCW Support] Missing attachement item",attname)
     end
-    print("result",result)
     return result
 end
 
@@ -86,9 +94,42 @@ function PLUGIN:InitializedPlugins()
                 end
             end
             
-        end)
-
+        end)        
+    end
+    if(ix.config.Get("arcCWGenWepItems", true)) then 
+        items = {}
+        for k,v in pairs(weapons.GetList("arccw_base")) do
+            items[v.ClassName]={
+                ["name"] = v.PrintName,
+                ["model"] = v.WorldModel or "models/props_junk/cardboard_box004a.mdl",
+                ["width"] = 3,
+                ["height"] = 2,
+                ["desc"] = v.Trivia_Desc or "Weapon",
+                ["weaponCategory"] = "primary"
+                
+            }
+            if(v.HoldtypeActive=="pistol" or string.find(string.lower(v.Trivia_Class or ""),"pistol") ) then
+                items[v.ClassName]["height"] = 1
+                items[v.ClassName]["width"] = 2
+                items[v.ClassName]["weaponCategory"] = "sidearm"
+            end
+        end
+        for k,v in pairs(items) do
+            //ix.item.Register(uniqueID, baseID, isBaseItem, path, luaGenerated)
+            local ITEM = ix.item.Register(k, "base_weapons", false, nil, true)
+            ITEM.name = v.name
+            ITEM.class = k
+            ITEM.description = v.desc
+            ITEM.model = v.model
+            ITEM.width = v.width or 1
+            ITEM.height = v.height or 1
+            ITEM.weaponCategory = v.weaponCategory
+            ITEM.category = "weapons"
         
+        end
+    end
+    if(ix.config.Get("arcCWGenAmmoItems", true))then
+        items = {}
     end
 end
 
