@@ -195,7 +195,7 @@ end
 
 function PANEL:Paint(width, height)
 	local time = SysTime()
-	local text = L("test"):lower()
+	local text = L("helix"):lower()
 	local centerY = height * self.waves[#self.waves][1] + height * 0.5
 	local sunbeamOffsetEasing = math.sin(math.pi * self.sunbeamOffset)
 	local textWidth, textHeight
