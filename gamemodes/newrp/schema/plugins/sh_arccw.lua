@@ -1,18 +1,25 @@
 local PLUGIN = PLUGIN
 PLUGIN.name = "arccw compatibility"
 PLUGIN.author = "Lechu2375"
-PLUGIN.DefaultAttachements = {
-    "go_usp_slide_short","go_p250_slide_short","go_stock_pistol_bt"
-}
 
-ix.config.Add("arcCWGenWepItems", false, "Whether or not to automatically generate ArcCW weapon items.", nil, {
+
+//// Add here attachements name if you want it to be avaiable to everyone. Attachement name is displayed in console after unsuccessful mounting
+PLUGIN.DefaultAttachements = {
+    "go_usp_slide_short","go_p250_slide_short","go_stock_pistol_bt" 
+}
+////
+
+
+
+ix.config.Add("arcCWGenWepItems", true, "Whether or not to automatically generate ArcCW weapon items.", nil, {
 	category = "ArcCW Support"
 })
 ix.config.Add("arcCWDefScopes", true, "Whether or not to allow using default scope attachement.", nil, {
 	category = "ArcCW Support"
 })
 
-function PLUGIN:ArcCW_PlayerCanAttach(ply, wep, attname, slot, detach)
+
+function PLUGIN:ArcCW_PlayerCanAttach(ply, wep, attname, _, detach)
     local character = ply:GetCharacter()
     if(!character) then 
         return false 
@@ -33,19 +40,17 @@ end
 
 
 
-
-
 local SwapTable = PLUGIN.DefaultAttachements
 PLUGIN.DefaultAttachements = {}
 for _,v in pairs(SwapTable) do
-    PLUGIN.DefaultAttachements[v] = true
+    PLUGIN.DefaultAttachements[v] = true //because why not, little optimization
 end
 
 if(CLIENT and ArcCW) then //Crosshair is broken for IX, we have already Health indicator in IX.
     GetConVar("arccw_crosshair"):SetInt(0)
     GetConVar("arccw_hud_showhealth"):SetInt(0)
     function PLUGIN:ShouldDrawCrosshair(_, weapon)
-        if(string.find(weapon:GetClass(),"arccw")) then
+        if(IsValid(weapon) and string.find(weapon:GetClass(),"arccw")) then
             return true
         end
     end
@@ -115,7 +120,6 @@ function PLUGIN:InitializedPlugins()
             end
         end
         for k,v in pairs(items) do
-            //ix.item.Register(uniqueID, baseID, isBaseItem, path, luaGenerated)
             local ITEM = ix.item.Register(k, "base_weapons", false, nil, true)
             ITEM.name = v.name
             ITEM.class = k
@@ -128,9 +132,12 @@ function PLUGIN:InitializedPlugins()
         
         end
     end
+    /*
     if(ix.config.Get("arcCWGenAmmoItems", true))then
         items = {}
     end
+    */
+
 end
 
 
