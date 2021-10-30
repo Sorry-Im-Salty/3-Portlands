@@ -7,3 +7,4 @@ ITEM.width = 3
 ITEM.height = 2
 ITEM.exRender = true
 ITEM.Ammo = "smg1"
+ITEM.bDropOnDeath = true
