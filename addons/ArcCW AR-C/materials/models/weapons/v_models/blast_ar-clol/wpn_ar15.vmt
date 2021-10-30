@@ -1,0 +1,27 @@
+"VertexlitGeneric"
+{
+	"$basetexture" 					"models/weapons/v_models/blast_ar-clol/wpn_ar15"
+	"$bumpmap"						"models/weapons/v_models/blast_ar-clol/wpn_ar15_n"
+	"$phongexponenttexture" 		"models/weapons/v_models/blast_ar-clol/wpn_ar15_s"
+	
+	"$nocull" "1"
+	"$color" 			"[.94 .96 .96]"
+	"$color2" 			"[0.87 0.90 0.92]"	
+	
+	"$normalmapalphaenvmapmask" 	"1"
+	"$normalmapalphaphongmask"    	"1"
+	
+	
+
+	"$phong"  				"1"
+	"$phongexponent" 		"20"
+	
+	"$phongboost" 			"1"
+	"$phongfresnelranges" 	"[.6 1.2 3.2]"
+	"$phongtint"            "[1 1 1]"
+	"$phongalbedotint" 		"1"	
+	
+ 	"$envmap" 					 	"env_cubemap"
+    	"$envmaptint"				 	"[0.002 0.002 0.002]"  
+	 $envmapfresnel "1" // Advanced envmap reflections
+}
