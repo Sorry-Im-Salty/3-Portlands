@@ -5,7 +5,7 @@ PLUGIN.DefaultAttachements = {
     "go_usp_slide_short","go_p250_slide_short","go_stock_pistol_bt"
 }
 
-ix.config.Add("arcCWGenWepItems", true, "Whether or not to automatically generate ArcCW weapon items.", nil, {
+ix.config.Add("arcCWGenWepItems", false, "Whether or not to automatically generate ArcCW weapon items.", nil, {
 	category = "ArcCW Support"
 })
 ix.config.Add("arcCWDefScopes", true, "Whether or not to allow using default scope attachement.", nil, {
